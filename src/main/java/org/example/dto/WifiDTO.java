@@ -1,4 +1,4 @@
-package org.example;
+package org.example.dto;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
-public class Wifi {
+public class WifiDTO {
     @SerializedName("X_SWIFI_MGR_NO")
     private String managerNumber;
 

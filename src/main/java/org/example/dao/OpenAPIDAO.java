@@ -1,27 +1,27 @@
-package org.example;
+package org.example.dao;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.example.dto.ApiResponse;
+import org.example.dto.WifiDTO;
+import org.example.util.Constants;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
-public class OpenAPI {
-    public static List<Wifi> fetchDataFromOpenAPI() throws IOException {
+import static org.example.util.Constants.*;
 
-        String apiKey = "4e5a42726c6b796f35335079446466";
-        String service = "TbPublicWifiInfo";
-        int startIndex = 3000;
-        int endIndex = 3999;
+public class OpenAPIDAO {
+    public List<WifiDTO> fetchDataFromOpenAPI() throws IOException {
 
-        String urlBuilder = "http://openapi.seoul.go.kr:8088/" + apiKey +
-                "/json/" + service +
-                "/" + startIndex +
-                "/" + endIndex;
+        String urlBuilder = "http://openapi.seoul.go.kr:8088/" + API_KEY +
+                "/json/" + API_SERVICE_NAME +
+                "/" + API_START_INDEX +
+                "/" + API_END_INDEX;
 
         URL url = new URL(urlBuilder);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -43,7 +43,7 @@ public class OpenAPI {
         }
     }
 
-    private static List<Wifi> parseJsonResponse(String jsonResponse) {
+    private List<WifiDTO> parseJsonResponse(String jsonResponse) {
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
                 .create();

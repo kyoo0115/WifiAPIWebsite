@@ -1,4 +1,7 @@
-package org.example;
+package org.example.servlet;
+
+import org.example.dao.WifiDAO;
+import org.example.dto.WifiDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,19 +12,25 @@ import java.io.IOException;
 
 @WebServlet("/details")
 public class DetailsServlet extends HttpServlet {
+
+    private WifiDAO wifiDAO;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        this.wifiDAO = new WifiDAO();
+    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String mgrNumber = request.getParameter("mgrNumber");
 
-        Wifi wifi = getWifiDetails(mgrNumber);
+        WifiDTO wifi = getWifiDetails(mgrNumber);
 
         request.setAttribute("wifi", wifi);
         request.getRequestDispatcher("details.jsp").forward(request, response);
     }
 
-    private Wifi getWifiDetails(String mgrNumber) {
-        // 이 메소드를 완성해야 합니다.
-        // mgrNumber를 사용하여 데이터베이스에서 와이파이 세부 정보를 가져옵니다.
-        return null;
+    private WifiDTO getWifiDetails(String mgrNumber) {
+        return wifiDAO.getWifiDetailsByMgrNo(mgrNumber);
     }
 }

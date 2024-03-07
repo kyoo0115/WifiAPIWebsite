@@ -1,10 +1,10 @@
-package org.example;
+package org.example.util;
 
 import java.text.DecimalFormat;
 
 public class DistanceCalculator {
     private static final double EARTH_RADIUS = 6371;
-    static double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {
+    public static double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {
         lat1 = Math.toRadians(lat1);
         lon1 = Math.toRadians(lon1);
         lat2 = Math.toRadians(lat2);

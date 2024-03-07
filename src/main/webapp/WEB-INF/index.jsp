@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="org.example.Wifi" %>
+<%@ page import="org.example.dto.WifiDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,13 +9,13 @@
               font-family: Arial, sans-serif;
               background-color: #f5f5f5;
               margin: 0;
-              padding: 5px;
+              padding: 0;
           }
 
           h2 {
               color: #333;
               text-align: left;
-              margin-bottom: 30px;
+              margin-bottom: 20px;
           }
 
           table {
@@ -46,6 +46,27 @@
           tr:hover {
               background-color: #e6e6e6;
           }
+          .pagination-controls {
+                  text-align: center;
+                  margin-top: 20px;
+              }
+
+          .pagination-controls a, .pagination-controls span {
+              display: inline-block;
+              padding: 8px 16px;
+              margin: 0 4px;
+              border: 1px solid #ddd;
+              background-color: #4CAF50;
+              color: #fff;
+              text-decoration: none;
+              transition: background-color 0.3s, color 0.3s;
+          }
+
+          .pagination-controls a:hover {
+              background-color: #367c39;
+              color: #fff;
+          }
+
 
           @media screen and (max-width: 768px) {
               table, th, td {
@@ -67,7 +88,7 @@
     <h2>와이파이 정보 구하기</h2>
 
     <div class="btn-header">
-        <a href="">홈 |</a>
+        <a href="/WifiAPIfinder">홈 |</a>
         <a href="">위치 히스토리 목록 |</a>
         <a href="">Open API 와이파이 정보 가져오기 |</a>
         <a href="">즐겨 찾기 보기 |</a>
@@ -112,9 +133,9 @@
             </tr>
         </thead>
         <tbody>
-            <% List<Wifi> wifiList = (List<Wifi>) request.getAttribute("wifiList");
+            <% List<WifiDTO> wifiList = (List<WifiDTO>) request.getAttribute("wifiList");
                 if (wifiList != null) {
-                    for (Wifi wifi : wifiList) { %>
+                    for (WifiDTO wifi : wifiList) { %>
                         <tr>
                             <td><%= wifi.getDistance() %></td>
                             <td><%= wifi.getManagerNumber() %></td>
@@ -138,6 +159,19 @@
                 } %>
         </tbody>
     </table>
+     <div class="pagination-controls">
+            <a href="index?latitude=<%= request.getParameter("latitude") %>&longitude=<%= request.getParameter("longitude") %>&page=1&pageSize=20">First</a>
+            <% int currentPage = Integer.parseInt(request.getParameter("page") != null ? request.getParameter("page") : "1");
+               int pageSize = Integer.parseInt(request.getParameter("pageSize") != null ? request.getParameter("pageSize") : "20");
+               if (currentPage > 1) {
+            %>
+                <a href="index?latitude=<%= request.getParameter("latitude") %>&longitude=<%= request.getParameter("longitude") %>&page=<%= currentPage - 1 %>&pageSize=<%= pageSize %>">Previous</a>
+            <%
+               }
+            %>
+            <span>Page <%= currentPage %></span>
+            <a href="index?latitude=<%= request.getParameter("latitude") %>&longitude=<%= request.getParameter("longitude") %>&page=<%= currentPage + 1 %>&pageSize=<%= pageSize %>">Next</a>
+        </div>
 
     <script>
         function getLocation() {
@@ -153,14 +187,12 @@
              alert("이 브라우저에서는 좌표가 지원되지 않습니다.")
          }
      }
-
         function fetchNearbyWifi() {
             var latitude = document.getElementById('latitude-input').value;
             var longitude = document.getElementById('longitude-input').value;
 
             window.location.href = 'index?latitude=' + latitude + '&longitude=' + longitude;
         }
-
     </script>
 </body>
 </html>
