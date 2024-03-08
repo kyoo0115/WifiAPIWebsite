@@ -1,13 +1,17 @@
 package org.example.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.security.Timestamp;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
+
+@AllArgsConstructor
 @Data
 public class LocationHistoryDTO {
     private int id;
-    private double latitude;
-    private double longitude;
+    private BigDecimal latitude;
+    private BigDecimal longitude;
     private Timestamp timestamp;
 }

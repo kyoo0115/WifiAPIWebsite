@@ -86,11 +86,17 @@
     <h2>와이파이 정보 구하기</h2>
 
     <div class="btn-header">
-        <a href="/WifiAPIfinder">홈 |</a>
-        <a href="/WifiAPIfinder/history.jsp">위치 히스토리 목록 |</a>
+        <a href="/WifiAPIfinder">홈</a>
+        <form id="locationForm" action="/record-location" method="post" target="hiddenFrame">
+            <input type="hidden" id="formLatitude" name="latitude" />
+            <input type="hidden" id="formLongitude" name="longitude" />
+        </form>
+        <iframe name="hiddenFrame" style="display:none;"></iframe>
+
         <form action="FetchDataServlet" method="post">
             <input type="submit" value="OpenAPI 정보 가져오기" />
         </form>
+        <a href="/WifiAPIfinder/history.jsp">위치 히스토리 목록</a>
         <a href="">즐겨 찾기 보기 |</a>
         <a href="">즐겨 찾기 그룹 관리</a>
     </div>
@@ -175,18 +181,42 @@
 
     <script>
         function getLocation() {
-           if (navigator.geolocation) {
-             navigator.geolocation.getCurrentPosition(function (pos) {
-                 var latitude = pos.coords.latitude;
-                 var longitude = pos.coords.longitude;
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    var latitude = pos.coords.latitude;
+                    var longitude = pos.coords.longitude;
 
-                 document.getElementById('latitude-input').value = latitude;
-                 document.getElementById('longitude-input').value = longitude;
-             });
-         } else {
-             alert("이 브라우저에서는 좌표가 지원되지 않습니다.")
-         }
-     }
+                    document.getElementById('latitude-input').value = latitude;
+                    document.getElementById('longitude-input').value = longitude;
+
+                    fetch('/WifiAPIfinder/record-location', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json;charset=utf-8',
+                        },
+                        body: JSON.stringify({
+                        latitude : latitude,
+                        longitude : longitude})
+
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log("Location recorded");
+                        } else {
+                            return response.text().then(text => { throw new Error(text) });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error sending location data', error);
+                    });
+                });
+            } else {
+                alert("이 브라우저에서는 좌표가 지원되지 않습니다.");
+            }
+        }
+
+
+
         function fetchNearbyWifi() {
             var latitude = document.getElementById('latitude-input').value;
             var longitude = document.getElementById('longitude-input').value;

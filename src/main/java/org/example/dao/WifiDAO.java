@@ -21,8 +21,6 @@ public class WifiDAO {
             String sql = "SELECT * FROM wifi_service";
             PreparedStatement stmt = conn.prepareStatement(sql);
 
-            System.out.println("Executing query: " + sql);
-
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {

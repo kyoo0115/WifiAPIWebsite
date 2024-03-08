@@ -68,7 +68,7 @@ public class OpenAPIDAO {
     }
 
     public static int fetchTotalCount() {
-        String baseUrl = String.format("http://openapi.seoul.go.kr:8088/%s/json/TbPublicWifiInfo/1/1", API_KEY);
+        String baseUrl = String.format(BASE_URL + "/%s/json/" + API_SERVICE_NAME + "/1/1", API_KEY);
         try {
             String jsonResponse = new OpenAPIDAO().makeHttpRequest(baseUrl);
             JsonObject result = JsonParser.parseString(jsonResponse).getAsJsonObject();
