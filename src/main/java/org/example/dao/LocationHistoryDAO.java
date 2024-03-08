@@ -25,7 +25,7 @@ public class LocationHistoryDAO {
                         rs.getInt("id"),
                         rs.getBigDecimal("latitude"),
                         rs.getBigDecimal("longitude"),
-                        rs.getTimestamp("timestsamp")
+                        rs.getTimestamp("timestamp")
                 );
                 historyList.add(history);
             }
@@ -42,6 +42,22 @@ public class LocationHistoryDAO {
                 stmt.setDouble(1, latitude);
                 stmt.setDouble(2, longitude);
                 stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            LOGGER.severe("SQL Exception: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public void deleteRecord(int id) throws SQLException {
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            String sql = "DELETE FROM location_history WHERE id = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, id);
+                int affectedRows = stmt.executeUpdate();
+                if (affectedRows == 0) {
+                    throw new SQLException("Deleting record failed, no rows affected.");
+                }
             }
         } catch (SQLException e) {
             LOGGER.severe("SQL Exception: " + e.getMessage());

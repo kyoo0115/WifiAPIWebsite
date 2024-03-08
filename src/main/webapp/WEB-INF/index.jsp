@@ -4,102 +4,121 @@
 <html>
 <head>
     <title>와이파이 정보 구하기</title>
-      <style>
-          body {
-              font-family: Arial, sans-serif;
-              background-color: #f5f5f5;
-              margin: 0;
-              padding: 0;
-          }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
 
-          h2 {
-              color: #333;
-              text-align: left;
-              margin-bottom: 20px;
-          }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-          table {
-              width: 100%;
-              margin-bottom: 20px;
-              background-color: #fff;
-              box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-          }
 
-          th, td {
-              text-align: left;
-              padding: 5px;
-              border-bottom: 1px solid #ddd;
-              word-break: keep-all;
-          }
+        .page-header {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
 
-          th {
-              background-color: #4CAF50;
-              color: white;
-              font-weight: bold;
-              padding: 5px;
-          }
+        .page-header h2 {
+            margin-left: 10px;
+        }
 
-          tr:nth-child(even) {
-              background-color: #f2f2f2;
-          }
+        .btn-header .btn {
+            margin-right: 10px;
+        }
 
-          tr:hover {
-              background-color: #e6e6e6;
-          }
+        .btn-header .btn:last-child {
+            margin-right: 0;
+        }
 
-          .pagination-controls {
-                  text-align: center;
-                  margin-top: 20px;
-          }
+        table {
+            width: 100%;
 
-          .pagination-controls a, .pagination-controls span {
-              display: inline-block;
-              padding: 8px 16px;
-              margin: 0 4px;
-              border: 1px solid #ddd;
-              background-color: #4CAF50;
-              color: #fff;
-              text-decoration: none;
-              transition: background-color 0.3s, color 0.3s;
-          }
+            border-collapse: collapse;
+        }
 
-          .pagination-controls a:hover {
-              background-color: #367c39;
-              color: #fff;
-          }
+        th, td {
+            word-break: keep-all;
+            text-align: center;
+            vertical-align: middle; /* Align text vertically in the middle */
+            padding: 8px; /* Padding inside cells */
+            border: 1px solid #ddd; /* Border color */
+        }
 
-          @media screen and (max-width: 768px) {
-              table, th, td {
-                  display: block;
-              }
+        .btn-danger {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
 
-              th {
-                  position: sticky;
-                  top: 0;
-                  z-index: 2;
-              }
+        .btn-danger:hover {
+            color: #fff;
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
 
-          }
-      </style>
+        .btn-view-favorites, .btn-manage-groups {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .btn-view-favorites:hover, .btn-manage-groups:hover {
+            background-color: #138496;
+        }
+
+        .pagination-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-controls a, .pagination-controls span {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 4px;
+            border: 1px solid #ddd;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .pagination-controls a:hover {
+            background-color: #367c39;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>와이파이 정보 구하기</h2>
-
-    <div class="btn-header">
-        <a href="/WifiAPIfinder">홈</a>
-        <form id="locationForm" action="/record-location" method="post" target="hiddenFrame">
-            <input type="hidden" id="formLatitude" name="latitude" />
-            <input type="hidden" id="formLongitude" name="longitude" />
-        </form>
-        <iframe name="hiddenFrame" style="display:none;"></iframe>
-
-        <form action="FetchDataServlet" method="post">
-            <input type="submit" value="OpenAPI 정보 가져오기" />
-        </form>
-        <a href="/WifiAPIfinder/history.jsp">위치 히스토리 목록</a>
-        <a href="">즐겨 찾기 보기 |</a>
-        <a href="">즐겨 찾기 그룹 관리</a>
+    <div class="page-header">
+        <h2>와이파이 정보 구하기</h2>
     </div>
+    <div class="container">
+        <div class="btn-header mb-3">
+            <a href="/WifiAPIfinder" class="btn btn-success">홈</a>
+            <a href="#" class="btn btn-view-favorites">즐겨 찾기 보기</a>
+            <a href="#" class="btn btn-manage-groups">즐겨 찾기 그룹 관리</a>
+            <form action="FetchDataServlet" method="post" class="d-inline">
+                <input type="submit" value="OpenAPI 정보 가져오기" class="btn btn-primary" />
+            </form>
+            <form action="location-history" method="get" class="d-inline">
+                <input type="submit" value="위치 히스토리 목록" class="btn btn-info" />
+            </form>
+        </div>
 
     <div class="input-header">
         <label>LAT:</label>
@@ -116,8 +135,8 @@
         <button id="nearbyWifiButton" type="button" onclick="fetchNearbyWifi()">근처 WIFI 정보 보기</button>
     </div>
 
-    <table id="wifiTable">
-        <thead>
+    <table id="wifiTable" class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
             <tr>
                 <th>거리(Km)</th>
                 <th>관리번호</th>
@@ -215,8 +234,6 @@
             }
         }
 
-
-
         function fetchNearbyWifi() {
             var latitude = document.getElementById('latitude-input').value;
             var longitude = document.getElementById('longitude-input').value;
@@ -229,5 +246,9 @@
             window.location.href = 'index?latitude=' + latitude + '&longitude=' + longitude;
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

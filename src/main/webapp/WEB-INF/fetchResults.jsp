@@ -42,27 +42,25 @@
 
     </style>
 </head>
-<body>
-
-<div class="result-container">
-    <%
-    Integer totalCount = (Integer) request.getAttribute("totalCount");
-    if (totalCount != null) {
-    %>
-        <div class="result-message">
-            <%= totalCount %>개의 WIFI 정보를 가져와서 저장했습니다.
+    <body>
+        <div class="result-container">
+            <%
+            Integer totalCount = (Integer) request.getAttribute("totalCount");
+            if (totalCount != null) {
+            %>
+                <div class="result-message">
+                    <%= totalCount %>개의 WIFI 정보를 가져와서 저장했습니다.
+                </div>
+            <%
+            } else {
+            %>
+                <div class="result-message">
+                    데이터를 가져오는 데 문제가 발생했습니다.
+                </div>
+            <%
+            }
+            %>
+            <a href="/WifiAPIfinder">홈으로 가기</a>
         </div>
-    <%
-    } else {
-    %>
-        <div class="result-message">
-            데이터를 가져오는 데 문제가 발생했습니다.
-        </div>
-    <%
-    }
-    %>
-    <a href="/WifiAPIfinder">홈으로 가기</a>
-</div>
-
-</body>
+    </body>
 </html>
