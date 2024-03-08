@@ -1,7 +1,7 @@
-package org.example.service;
+package org.service;
 
-import org.example.dao.WifiDAO;
-import org.example.dto.WifiDTO;
+import org.dao.WifiDAO;
+import org.dto.WifiDTO;
 
 import java.util.List;
 

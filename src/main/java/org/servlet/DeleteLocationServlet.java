@@ -1,6 +1,6 @@
-package org.example.servlet;
+package org.servlet;
 
-import org.example.dao.LocationHistoryDAO;
+import org.dao.LocationHistoryDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ public class DeleteLocationServlet extends HttpServlet {
         LocationHistoryDAO dao = new LocationHistoryDAO();
         try {
             dao.deleteRecord(id);
-            response.sendRedirect("location-history.jsp");
+            response.sendRedirect(request.getContextPath() + "/location-history?");
         } catch (SQLException e) {
             throw new ServletException("SQL Error deleting record", e);
         }

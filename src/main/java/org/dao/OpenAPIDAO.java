@@ -1,11 +1,12 @@
-package org.example.dao;
+package org.dao;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.example.dto.ApiResponse;
-import org.example.dto.WifiDTO;
+import org.dto.ApiResponse;
+import org.dto.WifiDTO;
+import org.util.Constants;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,8 +16,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.example.util.Constants.*;
 
 public class OpenAPIDAO {
     public List<WifiDTO> fetchDataFromOpenAPI() throws IOException {
@@ -28,8 +27,8 @@ public class OpenAPIDAO {
         for (int i = 0; i < totalPages; i++) {
             int startIndex = i * pageSize;
             int endIndex = (i + 1) * pageSize - 1;
-            String urlString = String.format(BASE_URL + "/%s/json/%s/%d/%d",
-                    API_KEY, API_SERVICE_NAME, startIndex, endIndex);
+            String urlString = String.format(Constants.BASE_URL + "/%s/json/%s/%d/%d",
+                    Constants.API_KEY, Constants.API_SERVICE_NAME, startIndex, endIndex);
 
             String jsonResponse = makeHttpRequest(urlString);
 
@@ -68,11 +67,11 @@ public class OpenAPIDAO {
     }
 
     public static int fetchTotalCount() {
-        String baseUrl = String.format(BASE_URL + "/%s/json/" + API_SERVICE_NAME + "/1/1", API_KEY);
+        String baseUrl = String.format(Constants.BASE_URL + "/%s/json/" + Constants.API_SERVICE_NAME + "/1/1", Constants.API_KEY);
         try {
             String jsonResponse = new OpenAPIDAO().makeHttpRequest(baseUrl);
             JsonObject result = JsonParser.parseString(jsonResponse).getAsJsonObject();
-            JsonObject data = result.getAsJsonObject(API_SERVICE_NAME);
+            JsonObject data = result.getAsJsonObject(Constants.API_SERVICE_NAME);
             return data.get("list_total_count").getAsInt();
         } catch (IOException e) {
             System.err.println("Error fetching total count: " + e.getMessage());

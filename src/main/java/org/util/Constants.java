@@ -1,4 +1,4 @@
-package org.example.util;
+package org.util;
 
 public class Constants {
     // Database constants

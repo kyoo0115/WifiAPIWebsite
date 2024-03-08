@@ -1,7 +1,8 @@
-package org.example.servlet;
+package org.servlet;
 
-import org.example.dao.WifiDAO;
-import org.example.dto.WifiDTO;
+import org.dao.WifiDAO;
+import org.dto.WifiDTO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

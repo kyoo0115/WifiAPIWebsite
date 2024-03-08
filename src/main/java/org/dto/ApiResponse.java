@@ -1,8 +1,7 @@
-package org.example.dto;
+package org.dto;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
-import org.example.dto.WifiDTO;
 
 import java.util.List;
 

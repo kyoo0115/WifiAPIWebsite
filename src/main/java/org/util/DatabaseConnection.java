@@ -1,11 +1,8 @@
-package org.example.util;
+package org.util;
 
 import lombok.Data;
 
 import java.sql.*;
-import java.util.List;
-
-import static org.example.util.Constants.*;
 
 @Data
 public class DatabaseConnection {
@@ -19,6 +16,6 @@ public class DatabaseConnection {
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
+        return DriverManager.getConnection(Constants.DATABASE_URL, Constants.DATABASE_USER, Constants.DATABASE_PASSWORD);
     }
 }

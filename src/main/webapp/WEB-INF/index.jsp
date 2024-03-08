@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="org.example.dto.WifiDTO" %>
+<%@ page import="org.dto.WifiDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +18,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
 
         .page-header {
             background-color: black;
@@ -48,9 +47,9 @@
         th, td {
             word-break: keep-all;
             text-align: center;
-            vertical-align: middle; /* Align text vertically in the middle */
-            padding: 8px; /* Padding inside cells */
-            border: 1px solid #ddd; /* Border color */
+            vertical-align: middle;
+            padding: 8px;
+            border: 1px solid #ddd;
         }
 
         .btn-danger {

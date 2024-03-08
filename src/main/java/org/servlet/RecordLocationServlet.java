@@ -1,7 +1,8 @@
-package org.example.servlet;
+package org.servlet;
 
 import com.google.gson.Gson;
-import org.example.dao.LocationHistoryDAO;
+import org.dao.LocationHistoryDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

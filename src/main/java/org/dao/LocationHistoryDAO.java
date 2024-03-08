@@ -1,7 +1,7 @@
-package org.example.dao;
+package org.dao;
 
-import org.example.dto.LocationHistoryDTO;
-import org.example.util.DatabaseConnection;
+import org.dto.LocationHistoryDTO;
+import org.util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -45,7 +45,6 @@ public class LocationHistoryDAO {
             }
         } catch (SQLException e) {
             LOGGER.severe("SQL Exception: " + e.getMessage());
-            throw e;
         }
     }
 
@@ -61,7 +60,6 @@ public class LocationHistoryDAO {
             }
         } catch (SQLException e) {
             LOGGER.severe("SQL Exception: " + e.getMessage());
-            throw e;
         }
     }
 }

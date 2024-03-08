@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.dto;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;

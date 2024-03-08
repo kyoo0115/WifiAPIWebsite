@@ -1,8 +1,8 @@
-package org.example.dao;
+package org.dao;
 
-import org.example.dto.WifiDTO;
-import org.example.util.DatabaseConnection;
-import org.example.util.DistanceCalculator;
+import org.dto.WifiDTO;
+import org.util.DatabaseConnection;
+import org.util.DistanceCalculator;
 
 import java.sql.*;
 import java.util.ArrayList;

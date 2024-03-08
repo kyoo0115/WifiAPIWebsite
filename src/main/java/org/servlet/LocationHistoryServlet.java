@@ -1,7 +1,7 @@
-package org.example.servlet;
+package org.servlet;
 
-import org.example.dao.LocationHistoryDAO;
-import org.example.dto.LocationHistoryDTO;
+import org.dao.LocationHistoryDAO;
+import org.dto.LocationHistoryDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
