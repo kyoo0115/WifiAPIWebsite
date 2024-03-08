@@ -40,7 +40,7 @@ public class WifiDTO {
     private String communicationCarrier;
 
     @SerializedName("X_SWIFI_CNSTC_YEAR")
-    private int constructionYear;
+    private String constructionYear;
 
     @SerializedName("X_SWIFI_INOUT_DOOR")
     private String inOutDoor;

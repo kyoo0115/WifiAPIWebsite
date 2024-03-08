@@ -59,6 +59,11 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+        .detail-col {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
 
         .btn-header a:hover {
             background-color: #367c39;
@@ -73,7 +78,7 @@
     <h2>와이파이 정보 구하기</h2>
 
     <div class="btn-header">
-        <a href="/WifiAPIfinder">홈 |</a>
+        <a href="/WifiAPIfinder">홈</a>
         <a href="">위치 히스토리 목록</a>
         <a href="">Open API 와이파이 정보 가져오기</a>
         <a href="">북마크 보기</a>

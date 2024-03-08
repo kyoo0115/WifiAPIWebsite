@@ -37,7 +37,7 @@ public class WifiDAO {
                         rs.getString("X_SWIFI_INSTL_MBY"),
                         rs.getString("X_SWIFI_SVC_SE"),
                         rs.getString("X_SWIFI_CMCWR"),
-                        rs.getInt("X_SWIFI_CNSTC_YEAR"),
+                        rs.getString("X_SWIFI_CNSTC_YEAR"),
                         rs.getString("X_SWIFI_INOUT_DOOR"),
                         rs.getString("X_SWIFI_REMARS3"),
                         rs.getBigDecimal("LAT"),
@@ -87,7 +87,7 @@ public class WifiDAO {
                         rs.getString("X_SWIFI_INSTL_MBY"),
                         rs.getString("X_SWIFI_SVC_SE"),
                         rs.getString("X_SWIFI_CMCWR"),
-                        rs.getInt("X_SWIFI_CNSTC_YEAR"),
+                        rs.getString("X_SWIFI_CNSTC_YEAR"),
                         rs.getString("X_SWIFI_INOUT_DOOR"),
                         rs.getString("X_SWIFI_REMARS3"),
                         rs.getBigDecimal("LAT"),
@@ -121,7 +121,7 @@ public class WifiDAO {
                     preparedStatement.setString(8, wifi.getInstallationBy());
                     preparedStatement.setString(9, wifi.getServiceType());
                     preparedStatement.setString(10, wifi.getCommunicationCarrier());
-                    preparedStatement.setInt(11, wifi.getConstructionYear());
+                    preparedStatement.setString(11, wifi.getConstructionYear());
                     preparedStatement.setString(12, wifi.getInOutDoor());
                     preparedStatement.setString(13, wifi.getRemarks());
                     preparedStatement.setBigDecimal(14, wifi.getLatitude());

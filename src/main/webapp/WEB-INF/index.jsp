@@ -46,10 +46,11 @@
           tr:hover {
               background-color: #e6e6e6;
           }
+
           .pagination-controls {
                   text-align: center;
                   margin-top: 20px;
-              }
+          }
 
           .pagination-controls a, .pagination-controls span {
               display: inline-block;
@@ -67,7 +68,6 @@
               color: #fff;
           }
 
-
           @media screen and (max-width: 768px) {
               table, th, td {
                   display: block;
@@ -81,16 +81,16 @@
 
           }
       </style>
-
-
 </head>
 <body>
     <h2>와이파이 정보 구하기</h2>
 
     <div class="btn-header">
         <a href="/WifiAPIfinder">홈 |</a>
-        <a href="">위치 히스토리 목록 |</a>
-        <a href="">Open API 와이파이 정보 가져오기 |</a>
+        <a href="/WifiAPIfinder/history.jsp">위치 히스토리 목록 |</a>
+        <form action="FetchDataServlet" method="post">
+            <input type="submit" value="OpenAPI 정보 가져오기" />
+        </form>
         <a href="">즐겨 찾기 보기 |</a>
         <a href="">즐겨 찾기 그룹 관리</a>
     </div>
@@ -190,6 +190,11 @@
         function fetchNearbyWifi() {
             var latitude = document.getElementById('latitude-input').value;
             var longitude = document.getElementById('longitude-input').value;
+
+            if (!latitude || !longitude) {
+                alert("좌표를 먼저 설정해주세요.");
+                return;
+            }
 
             window.location.href = 'index?latitude=' + latitude + '&longitude=' + longitude;
         }
