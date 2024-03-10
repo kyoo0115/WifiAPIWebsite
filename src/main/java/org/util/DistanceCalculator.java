@@ -3,7 +3,6 @@ package org.util;
 import java.text.DecimalFormat;
 
 public class DistanceCalculator {
-    private static final double EARTH_RADIUS = 6371;
     public static double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {
         lat1 = Math.toRadians(lat1);
         lon1 = Math.toRadians(lon1);
@@ -16,7 +15,7 @@ public class DistanceCalculator {
         double a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2), 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        double distance = EARTH_RADIUS * c;
+        double distance = Constants.EARTH_RADIUS * c;
 
         DecimalFormat df = new DecimalFormat("#.####");
         return Double.parseDouble(df.format(distance));

@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.dto.WifiDTO" %>
+<%@ page import="org.dto.BookmarkGroupDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -112,8 +113,35 @@
                 <input type="submit" value="위치 히스토리 목록" class="btn btn-info" />
             </form>
         </div>
+
+       <%
+           WifiDTO wifi = (WifiDTO) request.getAttribute("wifi");
+           if (wifi != null) {
+       %>
+           <form action="addWifiBookmark" method="post">
+               <input type="hidden" name="wifiId" value="<%= wifi.getManagerNumber() %>" />
+               <label for="bookmarkGroup">Bookmark Group:</label>
+               <select name="bookmarkGroupId" id="bookmarkGroup" required>
+                  <option value="">북마크 그룹 이름 선택</option>
+                  <%
+                  List<BookmarkGroupDTO> groups = (List<BookmarkGroupDTO>) request.getAttribute("groups");
+
+                  if (groups != null && !groups.isEmpty()) {
+                      for (BookmarkGroupDTO group : groups) {
+                  %>
+                      <option value="<%= group.getId() %>"><%= group.getName() %></option>
+                  <%
+                      }
+                  }
+                  %>
+               </select>
+               <input type="submit" value="Add to Bookmark" class="btn btn-primary" />
+           </form>
+       <%
+           }
+       %>
+
         <%
-            WifiDTO wifi = (WifiDTO) request.getAttribute("wifi");
             if (wifi != null) {
         %>
         <table>

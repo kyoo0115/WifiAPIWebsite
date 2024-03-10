@@ -35,7 +35,7 @@ public class LocationHistoryDAO {
         return historyList;
     }
 
-    public void recordLocation(double latitude, double longitude) throws SQLException {
+    public void recordLocation(double latitude, double longitude) {
         try (Connection conn = DatabaseConnection.getConnection()) {
             String sql = "INSERT INTO location_history (latitude, longitude) VALUES (?, ?)";
             try (PreparedStatement stmt = conn.prepareStatement(sql)) {

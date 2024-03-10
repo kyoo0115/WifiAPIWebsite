@@ -35,7 +35,7 @@ public class IndexServlet extends HttpServlet {
             if (request.getParameter("pageSize") != null) {
                 pageSize = Integer.parseInt(request.getParameter("pageSize"));
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException ignored) {
         }
 
         List<WifiDTO> wifiList = fetchDataFromDatabase(userLatitude, userLongitude, page, pageSize);

@@ -95,7 +95,7 @@ public class WifiDAO {
                 );
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.severe("SQL Exception: " + e.getMessage());
         }
         return wifi;
     }
@@ -133,7 +133,7 @@ public class WifiDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.severe("SQL Exception: " + e.getMessage());
         }
     }
 }

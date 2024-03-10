@@ -40,7 +40,6 @@ public class RecordLocationServlet extends HttpServlet {
             locationHistoryDAO.recordLocation(latitude, longitude);
             response.setStatus(HttpServletResponse.SC_OK);
         } catch (Exception e) {
-
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             throw new ServletException("Failed to record location", e);
         }
