@@ -12,5 +12,4 @@ public class WifiBookmarkDTO {
     private int bookmarkGroupId;
     private String wifiName;
     private Timestamp addedTime;
-    private String remarks;
 }

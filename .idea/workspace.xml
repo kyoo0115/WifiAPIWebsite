@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="523f8f66-acf4-4c51-9022-5e133fc2f9a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/dto/BookmarkGroupDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/dto/WifiBookmarkDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/service/BookmarkGroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkGroupServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/ManageBookmarkServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/ViewBookmarkServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/DeleteBookmarkGroupServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/EditBookmarkGroupServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dao/LocationHistoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dao/LocationHistoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dao/WifiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dao/WifiDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/DetailsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/DetailsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dto/BookmarkGroupDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dto/BookmarkGroupDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dto/WifiBookmarkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dto/WifiBookmarkDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/service/BookmarkGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/service/BookmarkGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkGroupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkGroupServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/RecordLocationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/RecordLocationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/ManageBookmarkServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/ManageBookmarkServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/util/DistanceCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/util/DistanceCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,18 +58,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.11876482",
-    "project.structure.side.proportion": "0.23963134",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.11876482&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23963134&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
@@ -111,7 +106,7 @@
           <option name="version" value="8.5.99.0" />
         </TomcatInfo>
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" value="-Dfile.encoding-UTF-8 " />
       <module name="WifiAPIfinder" />
       <method v="2">
         <option name="Make" enabled="true" />

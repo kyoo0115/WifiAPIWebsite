@@ -14,11 +14,9 @@ public class BookmarkGroupDTO {
     private int displayOrder;
     private Timestamp addedTime;
     private Timestamp editedTime;
-    private String remarks;
 
-    public BookmarkGroupDTO(String name, int displayOrder, String remarks) {
+    public BookmarkGroupDTO(String name, int displayOrder) {
         this.name = name;
         this.displayOrder = displayOrder;
-        this.remarks = remarks;
     }
 }

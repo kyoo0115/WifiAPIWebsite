@@ -25,6 +25,7 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         double userLatitude = Double.parseDouble(request.getParameter("latitude"));
         double userLongitude = Double.parseDouble(request.getParameter("longitude"));
+
         int page = 1;
         int pageSize = 20;
 

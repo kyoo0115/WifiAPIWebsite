@@ -94,7 +94,14 @@
             }
         }
     </style>
-
+    <script>
+            window.onload = function() {
+                var urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('success') === 'true') {
+                    alert('Successfully added to bookmark!');
+                }
+            };
+        </script>
 </head>
 <body>
     <div class="page-header">
@@ -105,7 +112,7 @@
         <div class="btn-header mb-3">
             <a href="/WifiAPIfinder" class="btn btn-success">홈</a>
             <a href="#" class="btn btn-view-favorites">즐겨 찾기 보기</a>
-            <a href="#" class="btn btn-manage-groups">즐겨 찾기 그룹 관리</a>
+            <a href="/WifiAPIfinder/manageBookmark" class="btn btn-manage-groups">즐겨 찾기 그룹 관리</a>
             <form action="FetchDataServlet" method="post" class="d-inline">
                 <input type="submit" value="OpenAPI 정보 가져오기" class="btn btn-primary" />
             </form>
@@ -120,7 +127,6 @@
        %>
            <form action="addWifiBookmark" method="post">
                <input type="hidden" name="wifiId" value="<%= wifi.getManagerNumber() %>" />
-               <label for="bookmarkGroup">Bookmark Group:</label>
                <select name="bookmarkGroupId" id="bookmarkGroup" required>
                   <option value="">북마크 그룹 이름 선택</option>
                   <%
@@ -135,7 +141,7 @@
                   }
                   %>
                </select>
-               <input type="submit" value="Add to Bookmark" class="btn btn-primary" />
+               <input type="submit" value="북마 추가하기" class="btn btn-primary" />
            </form>
        <%
            }

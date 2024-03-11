@@ -15,18 +15,17 @@ public class AddBookmarkGroupServlet extends HttpServlet {
     private final BookmarkGroupService service = new BookmarkGroupService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String name = request.getParameter("name");
         int displayOrder = Integer.parseInt(request.getParameter("displayOrder"));
-        String remarks = request.getParameter("remarks");
 
-        BookmarkGroupDTO group = new BookmarkGroupDTO(name, displayOrder, remarks);
+        BookmarkGroupDTO group = new BookmarkGroupDTO(name, displayOrder);
         group.setName(name);
         group.setDisplayOrder(displayOrder);
-        group.setRemarks(remarks);
 
         service.addBookmarkGroup(group);
 
-        response.sendRedirect("bookmark-group.jsp?success=true");
-
+        response.sendRedirect("manageBookmark?success=true");
     }
 }
