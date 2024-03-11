@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Edit Bookmark Group</h2>
+        <h2>북마크 그룹 수정</h2>
         <%
 
         BookmarkGroupDTO group = (BookmarkGroupDTO) request.getAttribute("group");
@@ -25,19 +25,19 @@
                 <input type="hidden" name="groupId" value="<%= group.getId() %>" />
 
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label for="name">이름:</label>
                     <input type="text" class="form-control" name="name" id="name" value="<%= group.getName() %>" required />
                 </div>
 
                 <div class="form-group">
-                    <label for="displayOrder">Display Order:</label>
+                    <label for="displayOrder">순서:</label>
                     <input type="number" class="form-control" name="displayOrder" id="displayOrder" value="<%= group.getDisplayOrder() %>" required />
                 </div>
 
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="submit" class="btn btn-primary">저장</button>
             </form>
         <% } else { %>
-            <p>Error: No bookmark group data to display.</p>
+            <p>Error: 북마크 정보가 없습니다.</p>
         <% } %>
     </div>
 

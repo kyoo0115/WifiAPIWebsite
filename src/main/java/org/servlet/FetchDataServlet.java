@@ -27,7 +27,6 @@ public class FetchDataServlet extends HttpServlet {
             request.setAttribute("totalCount", totalCount);
 
         } catch (Exception e) {
-            e.printStackTrace();
             request.setAttribute("error", "An error occurred while fetching data: " + e.getMessage());
         }
 

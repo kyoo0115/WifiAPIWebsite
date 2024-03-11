@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="523f8f66-acf4-4c51-9022-5e133fc2f9a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/DeleteBookmarkGroupServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/EditBookmarkGroupServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/dao/BookmarkDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/dao/BookmarkGroupDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/service/BookmarkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/DeleteBookmarkServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dto/BookmarkGroupDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dto/BookmarkGroupDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dto/WifiBookmarkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dto/WifiBookmarkDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/service/BookmarkGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/service/BookmarkGroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkGroupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkGroupServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/AddBookmarkServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/ManageBookmarkServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/ManageBookmarkServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/FetchDataServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/FetchDataServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/ViewBookmarkServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/ViewBookmarkServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group-edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookmark-view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/details.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />

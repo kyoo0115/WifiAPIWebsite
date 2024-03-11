@@ -73,6 +73,15 @@
             background-color: #138496;
         }
 
+        .btn-manage-groups {
+            background-color: #fd7e14;
+            color: white;
+        }
+
+        .btn-manage-groups:hover {
+            background-color: #e36c09;
+        }
+
         .pagination-controls {
             text-align: center;
             margin-top: 20px;
@@ -109,7 +118,7 @@
     <div class="container">
         <div class="btn-header mb-3">
             <a href="/WifiAPIfinder" class="btn btn-success">홈</a>
-            <a href="#" class="btn btn-view-favorites">즐겨 찾기 보기</a>
+            <a href="/WifiAPIfinder/viewBookmarks" class="btn btn-view-favorites">즐겨 찾기 보기</a>
             <a href="/WifiAPIfinder/manageBookmark" class="btn btn-manage-groups">즐겨 찾기 그룹 관리</a>
             <form action="FetchDataServlet" method="post" class="d-inline">
                 <input type="submit" value="OpenAPI 정보 가져오기" class="btn btn-primary" />

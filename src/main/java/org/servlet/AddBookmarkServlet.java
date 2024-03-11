@@ -23,7 +23,7 @@ public class AddBookmarkServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String wifiId = request.getParameter("wifiId");
         int bookmarkGroupId = Integer.parseInt(request.getParameter("bookmarkGroupId"));
-        System.out.println(wifiId);
+
         bookmarkService.addWifiToBookmarkGroup(wifiId, bookmarkGroupId);
 
         response.sendRedirect("details.jsp?success=true");

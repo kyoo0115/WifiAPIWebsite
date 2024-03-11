@@ -10,6 +10,8 @@ import java.sql.Timestamp;
 public class WifiBookmarkDTO {
     private int id;
     private int bookmarkGroupId;
+    private String wifiId;
     private String wifiName;
     private Timestamp addedTime;
+    private String bookmarkGroupName;
 }

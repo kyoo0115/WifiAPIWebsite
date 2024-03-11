@@ -86,13 +86,10 @@
     <div class="container">
         <div class="btn-header mb-3">
             <a href="/WifiAPIfinder" class="btn btn-success">홈</a>
-            <a href="#" class="btn btn-view-favorites">즐겨 찾기 보기</a>
+            <a href="/WifiAPIfinder/viewBookmarks" class="btn btn-view-favorites">즐겨 찾기 보기</a>
             <a href="/WifiAPIfinder/manageBookmark" class="btn btn-manage-groups">즐겨 찾기 그룹 관리</a>
             <form action="FetchDataServlet" method="post" class="d-inline">
                 <input type="submit" value="OpenAPI 정보 가져오기" class="btn btn-primary" />
-            </form>
-            <form action="location-history" method="get" class="d-inline">
-                <input type="submit" value="위치 히스토리 목록" class="btn btn-info" />
             </form>
         </div>
 
